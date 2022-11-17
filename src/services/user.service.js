@@ -19,6 +19,25 @@ const findUser = async (body) => {
   return token;
 };
 
+const create = async (body) => {
+  const { displayName, email, password, image } = body;
+
+  const user = await User.findOne({
+    where: {
+      email,
+    },
+  });
+
+  if (user) throw httpException(409, 'User already registered');
+
+  const newUser = await User.create({ displayName, email, password, image });
+
+  const token = createToken(newUser);
+
+  return token;
+};
+
 module.exports = {
   findUser,
+  create,
 };
