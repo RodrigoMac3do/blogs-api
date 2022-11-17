@@ -7,14 +7,26 @@ const statusCode = {
 };
 
 const mapStatusCode = (errorMessage) => {
-  if (errorMessage.includes('required') || errorMessage.includes('empty')) {
+  if (
+    errorMessage.includes('required')
+    || errorMessage.includes('empty')
+    || errorMessage.includes('must')
+  ) {
     return statusCode.BAD_REQUEST;
   }
 
   return statusCode.ACCESS_DENIED;
 };
 
+const mapMessage = (errorMessage) => {
+  if (errorMessage.includes('required') || errorMessage.includes('empty')) {
+    return 'Some required fields are missing';
+  }
+  return errorMessage;
+};
+
 module.exports = {
   statusCode,
   mapStatusCode,
+  mapMessage,
 };
