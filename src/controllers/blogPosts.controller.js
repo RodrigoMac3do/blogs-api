@@ -23,7 +23,7 @@ const create = async (req, res) => {
   const { authorization } = req.headers;
 
   const { id } = await decode(authorization);
-  
+
   await validateSchema(postSchema, body);
 
   await service.categories.findById(categoryIds);
@@ -33,8 +33,20 @@ const create = async (req, res) => {
   return res.status(201).json(newPost);
 };
 
+const remove = async (req, res) => {
+  const id = Number(req.params.id);
+  const { authorization } = req.headers;
+
+  const token = await decode(authorization);
+
+  await service.blogPosts.remove(id, { userId: token.id });
+
+  return res.sendStatus(204);
+};
+
 module.exports = {
   findAll,
   findById,
   create,
+  remove,
 };
