@@ -1,5 +1,5 @@
 const service = require('../services');
-const { postSchema } = require('../services/validations/schema');
+const { postSchema, postPutSchema } = require('../services/validations/schema');
 const validateSchema = require('../services/validations/validationSchema');
 const { decode } = require('../utils/jwt.util');
 
@@ -33,6 +33,23 @@ const create = async (req, res) => {
   return res.status(201).json(newPost);
 };
 
+const update = async (req, res) => {
+  const { body } = req;
+  const id = Number(req.params.id);
+  const { authorization } = req.headers;
+
+  const token = await decode(authorization);
+
+  await validateSchema(postPutSchema, body);
+
+  const updatedPost = await service.blogPosts.update(id, {
+    userId: token.id,
+    ...body,
+  });
+
+  return res.status(200).json(updatedPost);
+};
+
 const remove = async (req, res) => {
   const id = Number(req.params.id);
   const { authorization } = req.headers;
@@ -48,5 +65,6 @@ module.exports = {
   findAll,
   findById,
   create,
+  update,
   remove,
 };
