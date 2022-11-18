@@ -7,7 +7,7 @@ const verify = async (req, res) => {
 
   await validateSchema(loginSchema, body);
 
-  const token = await service.user.findUser(body);
+  const token = await service.auth.findUser(body);
 
   return res.status(200).json({ token });
 };

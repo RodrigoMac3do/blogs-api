@@ -1,7 +1,7 @@
-const login = require('./login.controller');
+const auth = require('./auth.controller');
 const user = require('./user.controller');
 
 module.exports = {
-  login,
+  auth,
   user,
 };
