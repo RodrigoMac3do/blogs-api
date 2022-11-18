@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use('/login', routes.login);
+app.use('/login', routes.auth);
 
 app.use('/user', routes.user);
 
