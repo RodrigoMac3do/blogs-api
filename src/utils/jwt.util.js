@@ -10,6 +10,20 @@ const createToken = (data) => {
   return token;
 };
 
+const validateToken = (token) => {
+  try {
+    const { data } = jwt.verify(token, process.env.JWT_SECRET);
+
+    return data;
+  } catch (error) {
+    const e = new Error('Expired or invalid token');
+    e.status = 401;
+
+    throw e;
+  }
+};
+
 module.exports = {
   createToken,
+  validateToken,
 };
