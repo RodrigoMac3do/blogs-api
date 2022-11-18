@@ -19,6 +19,9 @@ const mapStatusCode = (errorMessage) => {
 };
 
 const mapMessage = (errorMessage) => {
+  if (errorMessage.includes('name')) {
+    return errorMessage;
+  }
   if (errorMessage.includes('required') || errorMessage.includes('empty')) {
     return 'Some required fields are missing';
   }
