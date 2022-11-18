@@ -51,6 +51,20 @@ const create = async ({ categoryIds, ...body }) => {
   };
 };
 
+const update = async (id, body) => {
+  const { userId } = await findById(id);
+
+  if (body.userId !== userId) {
+    throw httpException(401, 'Unauthorized user');
+  }
+
+  await BlogPost.update({ ...body }, { where: { id } });
+
+  const result = await findById(id);
+
+  return result;
+};
+
 const remove = async (id, token) => {
   const { userId } = await findById(id);
 
@@ -67,5 +81,6 @@ module.exports = {
   findAll,
   findById,
   create,
+  update,
   remove,
 };
