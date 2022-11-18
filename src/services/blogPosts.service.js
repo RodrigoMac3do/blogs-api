@@ -51,8 +51,21 @@ const create = async ({ categoryIds, ...body }) => {
   };
 };
 
+const remove = async (id, token) => {
+  const { userId } = await findById(id);
+
+  if (token.userId !== userId) {
+    throw httpException(401, 'Unauthorized user');
+  }
+
+  await BlogPost.destroy({
+    where: { id },
+  });
+};
+
 module.exports = {
   findAll,
   findById,
   create,
+  remove,
 };
