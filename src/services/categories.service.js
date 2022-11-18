@@ -1,4 +1,5 @@
 const { Category } = require('../models');
+const httpException = require('../utils/http.exception');
 
 const create = async (body) => {
   const { name } = body;
@@ -14,7 +15,20 @@ const findAll = async () => {
   return categories;
 };
 
+const findById = async (ids) => {
+  const categories = await Promise.all(ids.map((id) => Category.findByPk(id)));
+
+  const category = categories.some((elem) => elem === null);
+
+  if (category === true) {
+    throw httpException(400, 'one or more "categoryIds" not found');
+  }
+
+  return categories;
+};
+
 module.exports = {
   create,
   findAll,
+  findById,
 };
