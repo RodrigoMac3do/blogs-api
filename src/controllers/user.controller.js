@@ -1,6 +1,7 @@
 const service = require('../services');
 const { userSchema } = require('../services/validations/schema');
 const validateSchema = require('../services/validations/validationSchema');
+const { decode } = require('../utils/jwt.util');
 
 const create = async (req, res) => {
   const { body } = req;
@@ -26,8 +27,19 @@ const findById = async (req, res) => {
   return res.status(200).json(user);
 };
 
+const remove = async (req, res) => {
+  const { authorization } = req.headers;
+  
+  const token = await decode(authorization);
+
+  await service.user.remove(token);
+
+  return res.sendStatus(204);
+};
+
 module.exports = {
   create,
   findAll,
   findById,
+  remove,
 };
