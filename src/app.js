@@ -11,6 +11,8 @@ app.use('/login', routes.auth);
 
 app.use('/user', routes.user);
 
+app.use('/categories', routes.categories);
+
 app.use(middleware.httpError);
 
 // É importante exportar a constante `app`,
