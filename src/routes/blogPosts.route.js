@@ -14,9 +14,16 @@ router.get(
 
 router.post('/', middleware.auth.validateToken, controller.blogPosts.create);
 
+router.put(
+  '/:id',
+  middleware.auth.validateToken,
+  controller.blogPosts.update,
+);
+
 router.delete(
   '/:id',
   middleware.auth.validateToken,
   controller.blogPosts.remove,
 );
+
 module.exports = router;
