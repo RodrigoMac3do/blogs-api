@@ -1,5 +1,6 @@
 const { BlogPost, User, Category } = require('../models');
 const httpException = require('../utils/http.exception');
+const postCategories = require('./postCategories.service');
 
 const findAll = async () => {
   const posts = await BlogPost.findAll({
@@ -26,7 +27,32 @@ const findById = async (id) => {
   return post;
 };
 
+const create = async ({ categoryIds, ...body }) => {
+  const { dataValues } = await BlogPost.create(body);
+
+  const { id, title, content, userId, updated, published } = dataValues;
+
+  const categories = await Promise.all(
+    categoryIds.map((categoryId) => ({
+      categoryId,
+      postId: id,
+    })),
+  );
+
+  await postCategories.create(categories);
+
+  return {
+    id,
+    title,
+    content,
+    userId,
+    updated,
+    published,
+  };
+};
+
 module.exports = {
   findAll,
   findById,
+  create,
 };
