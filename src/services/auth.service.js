@@ -1,6 +1,6 @@
 const { User } = require('../models');
 const httpException = require('../utils/http.exception');
-const { createToken } = require('../utils/jwt.util');
+const jwtUtil = require('../utils/jwt.util');
 
 const findUser = async (body) => {
   const { email } = body;
@@ -15,11 +15,24 @@ const findUser = async (body) => {
 
   const { password: _, ...userWithoutPassword } = user.dataValues;
 
-  const token = createToken(userWithoutPassword);
+  const token = jwtUtil.createToken(userWithoutPassword);
 
   return token;
 };
 
+const validateToken = (token) => {
+  if (!token) {
+      const e = new Error('Token not found');
+      e.status = 401;
+      throw e;
+  }
+
+  const user = jwtUtil.validateToken(token);
+
+  return user;
+};
+
 module.exports = {
   findUser,
+  validateToken,
 };
