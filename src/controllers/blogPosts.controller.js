@@ -17,6 +17,14 @@ const findById = async (req, res) => {
   return res.status(200).json(post);
 };
 
+const findByTerm = async (req, res) => {
+  const { q } = req.query;
+
+  const posts = await service.blogPosts.findByTerm(q);
+
+  res.status(200).json(posts);
+};
+
 const create = async (req, res) => {
   const { body } = req;
   const { categoryIds } = body;
@@ -38,7 +46,7 @@ const update = async (req, res) => {
   const id = Number(req.params.id);
   const { authorization } = req.headers;
 
-  const token = await decode(authorization);
+  const token = decode(authorization);
 
   await validateSchema(postPutSchema, body);
 
@@ -47,7 +55,7 @@ const update = async (req, res) => {
     ...body,
   });
 
-  return res.status(200).json(updatedPost);
+  res.status(200).json(updatedPost);
 };
 
 const remove = async (req, res) => {
@@ -64,6 +72,7 @@ const remove = async (req, res) => {
 module.exports = {
   findAll,
   findById,
+  findByTerm,
   create,
   update,
   remove,
