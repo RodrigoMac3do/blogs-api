@@ -12,6 +12,4 @@ const signIn = async (req, res) => {
   res.status(200).json({ token });
 };
 
-module.exports = {
-  signIn,
-};
+module.exports = { signIn };
