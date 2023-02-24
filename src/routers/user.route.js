@@ -4,12 +4,12 @@ const middleware = require('../middlewares');
 
 const router = express.Router();
 
-router.get('/', middleware.auth.validateToken, controller.user.findAll);
+router.get('/', middleware.auth, controller.user.findAll);
 
-router.get('/:id', middleware.auth.validateToken, controller.user.findById);
+router.get('/:id', middleware.auth, controller.user.findById);
 
 router.post('/', controller.user.create);
 
-router.delete('/me', middleware.auth.validateToken, controller.user.remove);
+router.delete('/me', middleware.auth, controller.user.remove);
 
 module.exports = router;
