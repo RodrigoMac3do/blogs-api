@@ -10,13 +10,13 @@ const create = async (req, res) => {
 
   const token = await service.user.create(body);
 
-  return res.status(201).json({ token });
+  res.status(201).json({ token });
 };
 
 const findAll = async (_req, res) => {
   const users = await service.user.findAll();
 
-  return res.status(200).json(users);
+  res.status(200).json(users);
 };
 
 const findById = async (req, res) => {
@@ -24,17 +24,17 @@ const findById = async (req, res) => {
 
   const user = await service.user.findById(id);
 
-  return res.status(200).json(user);
+  res.status(200).json(user);
 };
 
 const remove = async (req, res) => {
   const { authorization } = req.headers;
-  
+
   const token = await decode(authorization);
 
   await service.user.remove(token);
 
-  return res.sendStatus(204);
+  res.sendStatus(204);
 };
 
 module.exports = {
