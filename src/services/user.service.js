@@ -13,13 +13,16 @@ const create = async (body) => {
 
   if (user) throw httpException(409, 'User already registered');
 
-  const newUser = await User.create({ displayName, email, password, image });
+  const { dataValues } = await User.create({
+    displayName,
+    email,
+    password,
+    image,
+  });
 
-  const { password: _, ...userWithoutPassword } = newUser.dataValues;
+  const { password: _, ...userWithoutPassword } = dataValues;
 
-  const token = createToken(userWithoutPassword);
-
-  return token;
+  return createToken(userWithoutPassword);
 };
 
 const findAll = async () => {
