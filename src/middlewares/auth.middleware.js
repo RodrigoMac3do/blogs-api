@@ -1,13 +1,14 @@
-const service = require('../services');
+const httpException = require('../utils/http.exception');
+const jwt = require('../utils/jwt.util');
 
-const validateToken = async (req, _res, next) => {
+const auth = async (req, _res, next) => {
   const { authorization } = req.headers;
 
-  const user = service.auth.validateToken(authorization);
+  if (!authorization) throw httpException(401, 'Token not found');
 
-  req.user = user;
+  jwt.validateToken(authorization);
 
   next();
 };
 
-module.exports = { validateToken };
+module.exports = auth;
