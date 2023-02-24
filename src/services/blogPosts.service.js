@@ -1,3 +1,4 @@
+const { Op } = require('sequelize');
 const { BlogPost, User, Category } = require('../models');
 const httpException = require('../utils/http.exception');
 const postCategories = require('./postCategories.service');
@@ -25,6 +26,27 @@ const findById = async (id) => {
   if (!post) throw httpException(404, 'Post does not exist');
 
   return post;
+};
+
+const findByTerm = async (q) => {
+  const posts = await BlogPost.findAll({
+    where: {
+      [Op.or]: [
+        { title: { [Op.like]: `%${q}%` } },
+        { content: { [Op.like]: `%${q}%` } },
+      ],
+    },
+    include: [
+      { model: User, as: 'user', attributes: { exclude: ['password'] } },
+      { model: Category, as: 'categories' },
+    ],
+  });
+  
+  if (!q) {
+    return findAll();
+  }
+
+  return posts;
 };
 
 const create = async ({ categoryIds, ...body }) => {
@@ -80,6 +102,7 @@ const remove = async (id, token) => {
 module.exports = {
   findAll,
   findById,
+  findByTerm,
   create,
   update,
   remove,
