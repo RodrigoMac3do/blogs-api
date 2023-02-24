@@ -1,7 +1,7 @@
-const httpError = require('./http.error.middleware');
+const httpErrorMiddleware = require('./http.error.middleware');
 const auth = require('./auth.middleware');
 
 module.exports = {
-  httpError,
+  httpErrorMiddleware,
   auth,
 };
