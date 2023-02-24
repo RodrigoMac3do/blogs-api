@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/', middleware.auth, controller.blogPosts.findAll);
 
-router.get('/search', controller.blogPosts.findByTerm);
+router.get('/search', middleware.auth, controller.blogPosts.findByTerm);
 
 router.get('/:id', middleware.auth, controller.blogPosts.findById);
 
