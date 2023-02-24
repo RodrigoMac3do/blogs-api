@@ -21,13 +21,17 @@ const categorySchema = Joi.object({
 });
 
 const postSchema = Joi.object({
-  title: Joi.string().required(),
+  title: Joi.string().required().messages({
+    'string.empty': 'Some required fields are missing',
+  }),
   content: Joi.string().required(),
   categoryIds: Joi.array().required(),
 });
 
 const postPutSchema = Joi.object({
-  title: Joi.string().required(),
+  title: Joi.string().required().messages({
+    'string.empty': 'Some required fields are missing',
+  }),
   content: Joi.string().required(),
 });
 
