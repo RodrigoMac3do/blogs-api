@@ -18,22 +18,7 @@ const mapStatusCode = (errorMessage) => {
   return statusCode.ACCESS_DENIED;
 };
 
-const mapMessage = (errorMessage) => {
-  if (errorMessage.includes('name')) {
-    return errorMessage;
-  }
-  if (errorMessage.includes('categoryIds')) {
-    return errorMessage;
-  }
-
-  if (errorMessage.includes('required') || errorMessage.includes('empty')) {
-    return 'Some required fields are missing';
-  }
-  return errorMessage;
-};
-
 module.exports = {
   statusCode,
   mapStatusCode,
-  mapMessage,
 };
