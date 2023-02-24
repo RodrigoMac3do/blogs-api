@@ -1,21 +1,15 @@
 const express = require('express');
 require('express-async-errors');
-const middleware = require('./middlewares');
-const routes = require('./routes');
+const Routes = require('./routers/router');
+const { httpErrorMiddleware } = require('./middlewares');
 
 const app = express();
 
 app.use(express.json());
 
-app.use('/login', routes.auth);
+app.use(Routes);
 
-app.use('/user', routes.user);
-
-app.use('/categories', routes.categories);
-
-app.use('/post', routes.blogPosts);
-
-app.use(middleware.httpError);
+app.use(httpErrorMiddleware);
 
 // É importante exportar a constante `app`,
 // para que possa ser utilizada pelo arquivo `src/server.js`
