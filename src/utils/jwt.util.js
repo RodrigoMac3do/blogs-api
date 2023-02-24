@@ -22,7 +22,7 @@ const validateToken = (token) => {
 };
 
 const decode = (token) => {
-  const { data } = jwt.decode(token);
+  const data = jwt.decode(token);
 
   return data;
 };
