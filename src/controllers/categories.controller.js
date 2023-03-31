@@ -9,13 +9,13 @@ const create = async (req, res) => {
 
   const category = await service.categories.create(body);
 
-  return res.status(201).json(category);
+  res.status(201).json(category);
 };
 
 const findAll = async (_req, res) => {
   const categories = await service.categories.findAll();
 
-  return res.status(200).json(categories);
+  res.status(200).json(categories);
 };
 
 module.exports = {
