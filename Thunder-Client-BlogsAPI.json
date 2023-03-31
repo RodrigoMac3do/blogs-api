@@ -1,0 +1,277 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "BlogsAPI",
+    "dateExported": "2023-03-31T23:05:49.790Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "702c314b-6138-4667-a66a-e091ef333e56",
+            "colId": "83dedf00-6495-4f64-83e3-f7839d45b6a6",
+            "containerId": "",
+            "name": "Faz login na aplicação",
+            "url": "http://localhost:3000/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-02-24T20:09:14.791Z",
+            "modified": "2023-02-24T21:05:59.113Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"lewishamilton@gmail.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3047e481-b60a-47b1-a8f8-e8e689585c82",
+            "colId": "83dedf00-6495-4f64-83e3-f7839d45b6a6",
+            "containerId": "",
+            "name": "Criação de novo usuário",
+            "url": "http://localhost:3000/user",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-02-24T21:15:58.434Z",
+            "modified": "2023-02-24T21:24:34.782Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"displayName\": \"Brett Wiltshire\",\n  \"email\": \"brett@email.com\",\n  \"password\": \"123456\",\n  \"image\": \"http://4.bp.blogspot.com/_YA50adQ-7vQ/S1gfR_6ufpI/AAAAAAAAAAk/1ErJGgRWZDg/S45/brett.png\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ffcfb476-c4a4-4777-9d6d-a76b09d348cc",
+            "colId": "83dedf00-6495-4f64-83e3-f7839d45b6a6",
+            "containerId": "",
+            "name": "Listagem de todos os usuarios",
+            "url": "http://localhost:3000/user",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-02-24T21:35:06.479Z",
+            "modified": "2023-03-31T19:32:11.945Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjgwMjkwOTkyLCJleHAiOjE2ODAzNzczOTJ9.TW5aDwHQSkIlJZ6tV8YkSRwpYqpjDm6xdVgH8pvkFu0"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "400a8a23-040b-4945-95d9-ffcaa5f424df",
+            "colId": "83dedf00-6495-4f64-83e3-f7839d45b6a6",
+            "containerId": "",
+            "name": "Listagem de usuario por id",
+            "url": "http://localhost:3000/user/1",
+            "method": "GET",
+            "sortNum": 35000,
+            "created": "2023-03-31T19:32:24.375Z",
+            "modified": "2023-03-31T19:33:03.808Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjgwMjkwOTkyLCJleHAiOjE2ODAzNzczOTJ9.TW5aDwHQSkIlJZ6tV8YkSRwpYqpjDm6xdVgH8pvkFu0"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "809f413e-6576-49a3-bb90-749ee8a787ac",
+            "colId": "83dedf00-6495-4f64-83e3-f7839d45b6a6",
+            "containerId": "",
+            "name": "Criação de nova categoria",
+            "url": "http://localhost:3000/categories",
+            "method": "POST",
+            "sortNum": 37500,
+            "created": "2023-03-31T19:34:02.534Z",
+            "modified": "2023-03-31T19:52:04.088Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjgwMjkwOTkyLCJleHAiOjE2ODAzNzczOTJ9.TW5aDwHQSkIlJZ6tV8YkSRwpYqpjDm6xdVgH8pvkFu0"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Typescript\"\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6f836a34-6e0c-430a-8ee2-4988a5c193cd",
+            "colId": "83dedf00-6495-4f64-83e3-f7839d45b6a6",
+            "containerId": "",
+            "name": "Listagem de todas as categorias",
+            "url": "http://localhost:3000/categories",
+            "method": "GET",
+            "sortNum": 38750,
+            "created": "2023-03-31T19:36:55.847Z",
+            "modified": "2023-03-31T19:37:09.204Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjgwMjkwOTkyLCJleHAiOjE2ODAzNzczOTJ9.TW5aDwHQSkIlJZ6tV8YkSRwpYqpjDm6xdVgH8pvkFu0"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9de9964f-5f0a-40d8-9b85-9b248054da4c",
+            "colId": "83dedf00-6495-4f64-83e3-f7839d45b6a6",
+            "containerId": "",
+            "name": "Criação de novo post",
+            "url": "http://localhost:3000/post",
+            "method": "POST",
+            "sortNum": 39375,
+            "created": "2023-03-31T19:40:20.911Z",
+            "modified": "2023-03-31T19:41:26.132Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjgwMjkwOTkyLCJleHAiOjE2ODAzNzczOTJ9.TW5aDwHQSkIlJZ6tV8YkSRwpYqpjDm6xdVgH8pvkFu0"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Latest updates, August 1st\",\n  \"content\": \"The whole text for the blog post goes here in this key\",\n  \"categoryIds\": [1, 2]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7fb16541-a405-4927-88dd-8db333c04405",
+            "colId": "83dedf00-6495-4f64-83e3-f7839d45b6a6",
+            "containerId": "",
+            "name": "Listagem de todos os posts",
+            "url": "http://localhost:3000/post/1",
+            "method": "GET",
+            "sortNum": 39687.5,
+            "created": "2023-03-31T19:57:20.762Z",
+            "modified": "2023-03-31T21:02:34.301Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjgwMjkwOTkyLCJleHAiOjE2ODAzNzczOTJ9.TW5aDwHQSkIlJZ6tV8YkSRwpYqpjDm6xdVgH8pvkFu0"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e59e1473-fdb8-47ba-a8b7-a9f0237d606d",
+            "colId": "83dedf00-6495-4f64-83e3-f7839d45b6a6",
+            "containerId": "",
+            "name": "Listagem de post por id",
+            "url": "http://localhost:3000/post/1",
+            "method": "GET",
+            "sortNum": 39843.8,
+            "created": "2023-03-31T21:02:38.569Z",
+            "modified": "2023-03-31T21:02:38.569Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjgwMjkwOTkyLCJleHAiOjE2ODAzNzczOTJ9.TW5aDwHQSkIlJZ6tV8YkSRwpYqpjDm6xdVgH8pvkFu0"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "93a710ca-ed1b-4c3f-910c-29744067a47a",
+            "colId": "83dedf00-6495-4f64-83e3-f7839d45b6a6",
+            "containerId": "",
+            "name": "Atualização de post",
+            "url": "http://localhost:3000/post/1",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-02-24T22:22:56.827Z",
+            "modified": "2023-03-31T23:04:36.604Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjgwMjkwOTkyLCJleHAiOjE2ODAzNzczOTJ9.TW5aDwHQSkIlJZ6tV8YkSRwpYqpjDm6xdVgH8pvkFu0"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Latest updates, August 1st\",\n  \"content\": \"The whole text for the blog post goes here in this key\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e32b5038-479e-477c-bc53-170d7793e503",
+            "colId": "83dedf00-6495-4f64-83e3-f7839d45b6a6",
+            "containerId": "",
+            "name": "Deletar um post",
+            "url": "http://localhost:3000/post/1",
+            "method": "DELETE",
+            "sortNum": 51250,
+            "created": "2023-03-31T21:37:19.814Z",
+            "modified": "2023-03-31T21:38:10.559Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjgwMjkwOTkyLCJleHAiOjE2ODAzNzczOTJ9.TW5aDwHQSkIlJZ6tV8YkSRwpYqpjDm6xdVgH8pvkFu0"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7865f680-e9e6-4033-9771-91a68d435b82",
+            "colId": "83dedf00-6495-4f64-83e3-f7839d45b6a6",
+            "containerId": "",
+            "name": "Deletar usuário",
+            "url": "http://localhost:3000/user/me",
+            "method": "DELETE",
+            "sortNum": 55625,
+            "created": "2023-03-31T21:08:35.635Z",
+            "modified": "2023-03-31T21:37:34.521Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjgwMjkwOTkyLCJleHAiOjE2ODAzNzczOTJ9.TW5aDwHQSkIlJZ6tV8YkSRwpYqpjDm6xdVgH8pvkFu0"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4933dea0-0b4a-4e2d-a60d-e3cf830d243d",
+            "colId": "83dedf00-6495-4f64-83e3-f7839d45b6a6",
+            "containerId": "",
+            "name": "Listagem de posts por termo",
+            "url": "http://localhost:3000/post/search?q=Foguete não",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-03-31T21:27:38.356Z",
+            "modified": "2023-03-31T21:36:30.685Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGlzcGxheU5hbWUiOiJMZXdpcyBIYW1pbHRvbiIsImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvMS8xOC9MZXdpc19IYW1pbHRvbl8yMDE2X01hbGF5c2lhXzIuanBnIiwiaWF0IjoxNjgwMjkwOTkyLCJleHAiOjE2ODAzNzczOTJ9.TW5aDwHQSkIlJZ6tV8YkSRwpYqpjDm6xdVgH8pvkFu0"
+                }
+            ],
+            "params": [
+                {
+                    "name": "q",
+                    "value": "Foguete não",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ]
+}
