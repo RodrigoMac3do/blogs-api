@@ -1,7 +1,7 @@
 const { Op } = require('sequelize');
 const { BlogPost, User, Category } = require('../models');
+const { createCategories } = require('./categories.service');
 const httpException = require('../utils/http.exception');
-const postCategories = require('./postCategories.service');
 
 const findAll = async () => {
   const posts = await BlogPost.findAll({
@@ -41,7 +41,7 @@ const findByTerm = async (q) => {
       { model: Category, as: 'categories' },
     ],
   });
-  
+
   if (!q) {
     return findAll();
   }
@@ -61,7 +61,7 @@ const create = async ({ categoryIds, ...body }) => {
     })),
   );
 
-  await postCategories.create(categories);
+  await createCategories(categories);
 
   return {
     id,
