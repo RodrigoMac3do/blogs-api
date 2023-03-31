@@ -4,6 +4,12 @@ const httpException = require('../utils/http.exception');
 const create = async (body) => {
   const { name } = body;
 
+  const findCategory = await Category.findOne({ where: { name } });
+
+  if (findCategory !== null) {
+    throw httpException(422, 'Categoria já existente');
+  }
+
   const category = await Category.create({ name });
 
   return category;
