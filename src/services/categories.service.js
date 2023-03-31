@@ -1,5 +1,12 @@
 const { Category } = require('../models');
+const { PostCategory } = require('../models');
 const httpException = require('../utils/http.exception');
+
+const createCategories = async (categories) => {
+  const result = await PostCategory.bulkCreate(categories);
+
+  return result;
+};
 
 const create = async (body) => {
   const { name } = body;
@@ -34,6 +41,7 @@ const findById = async (ids) => {
 };
 
 module.exports = {
+  createCategories,
   create,
   findAll,
   findById,
